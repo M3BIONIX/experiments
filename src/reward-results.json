@@ -1,0 +1,41 @@
+[
+  {
+    "label": "Reward removed",
+    "counts": [
+      3,
+      1,
+      2
+    ],
+    "dwell": [
+      2.84,
+      1.32,
+      1.7
+    ]
+  },
+  {
+    "label": "After 20 unrewarded views",
+    "counts": [
+      1,
+      2,
+      2
+    ],
+    "dwell": [
+      0.22,
+      1.64,
+      1.7
+    ]
+  },
+  {
+    "label": "Logo farther away",
+    "counts": [
+      1,
+      2,
+      1
+    ],
+    "dwell": [
+      0.74,
+      0.58,
+      0.22
+    ]
+  }
+]

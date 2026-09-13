@@ -1,0 +1,6 @@
+{
+  "workers": 4,
+  "extra_workers_attempted": 4,
+  "extra_workers_stopped_before_any_completed_condition": true,
+  "reason": "No throughput benefit from extra parallel workers on this host; numerical protocol unchanged."
+}

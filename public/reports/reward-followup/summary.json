@@ -1,0 +1,491 @@
+{
+  "conditions": 36,
+  "body_tests": 108,
+  "training_current_total_ms": 144000.0,
+  "training_pam11_spikes": 189556,
+  "arms": {
+    "paired": {
+      "n": 12,
+      "changed_edges_min": 3426,
+      "changed_edges_max": 3492,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 3,
+          "trained_ever": 3,
+          "no_logo_approached": 6,
+          "target_dwell_total_s": 2.8400000000000016,
+          "pam11_spikes": 1
+        },
+        "extinction": {
+          "trained_first": 1,
+          "trained_ever": 1,
+          "no_logo_approached": 6,
+          "target_dwell_total_s": 0.21999999999999997,
+          "pam11_spikes": 1
+        },
+        "effort": {
+          "trained_first": 1,
+          "trained_ever": 1,
+          "no_logo_approached": 7,
+          "target_dwell_total_s": 0.7400000000000003,
+          "pam11_spikes": 1
+        }
+      }
+    },
+    "unpaired": {
+      "n": 12,
+      "changed_edges_min": 3416,
+      "changed_edges_max": 3537,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 1,
+          "trained_ever": 1,
+          "no_logo_approached": 5,
+          "target_dwell_total_s": 1.3200000000000007,
+          "pam11_spikes": 1
+        },
+        "extinction": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "no_logo_approached": 4,
+          "target_dwell_total_s": 1.6400000000000008,
+          "pam11_spikes": 1
+        },
+        "effort": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "no_logo_approached": 5,
+          "target_dwell_total_s": 0.5800000000000001,
+          "pam11_spikes": 1
+        }
+      }
+    },
+    "frozen": {
+      "n": 12,
+      "changed_edges_min": 0,
+      "changed_edges_max": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "no_logo_approached": 4,
+          "target_dwell_total_s": 1.7000000000000006,
+          "pam11_spikes": 0
+        },
+        "extinction": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "no_logo_approached": 4,
+          "target_dwell_total_s": 1.7000000000000006,
+          "pam11_spikes": 0
+        },
+        "effort": {
+          "trained_first": 1,
+          "trained_ever": 1,
+          "no_logo_approached": 6,
+          "target_dwell_total_s": 0.21999999999999997,
+          "pam11_spikes": 0
+        }
+      }
+    }
+  },
+  "matched_differences": {
+    "withdrawal": {
+      "unpaired": {
+        "paired_only_first": 2,
+        "control_only_first": 0,
+        "same_first_outcome": 10,
+        "net_first_approach_gain": 2,
+        "mean_target_dwell_difference_s": 0.12666666666666673
+      },
+      "frozen": {
+        "paired_only_first": 1,
+        "control_only_first": 0,
+        "same_first_outcome": 11,
+        "net_first_approach_gain": 1,
+        "mean_target_dwell_difference_s": 0.09500000000000004
+      }
+    },
+    "extinction": {
+      "unpaired": {
+        "paired_only_first": 0,
+        "control_only_first": 1,
+        "same_first_outcome": 11,
+        "net_first_approach_gain": -1,
+        "mean_target_dwell_difference_s": -0.1183333333333334
+      },
+      "frozen": {
+        "paired_only_first": 0,
+        "control_only_first": 1,
+        "same_first_outcome": 11,
+        "net_first_approach_gain": -1,
+        "mean_target_dwell_difference_s": -0.1233333333333334
+      }
+    },
+    "effort": {
+      "unpaired": {
+        "paired_only_first": 0,
+        "control_only_first": 1,
+        "same_first_outcome": 11,
+        "net_first_approach_gain": -1,
+        "mean_target_dwell_difference_s": 0.013333333333333358
+      },
+      "frozen": {
+        "paired_only_first": 1,
+        "control_only_first": 1,
+        "same_first_outcome": 10,
+        "net_first_approach_gain": 0,
+        "mean_target_dwell_difference_s": 0.04333333333333336
+      }
+    }
+  },
+  "protocol": {
+    "status": "predeclared",
+    "graph": {
+      "release": "MaleCNS v1.0",
+      "neurons": 166700,
+      "directed_edges": 25582938,
+      "arrays_verified": true
+    },
+    "repo_commit": "fcefe9441f80e25aab713411ebced53f5e5ea172",
+    "code_sha256": "b181bc1d57aac52ec42977e9c0b248998c5803d346dc58fbe8589044bc1723d0",
+    "logos": [
+      "instagram",
+      "google",
+      "whatsapp",
+      "youtube"
+    ],
+    "seeds": [
+      101,
+      102,
+      103
+    ],
+    "arms": [
+      "paired",
+      "unpaired",
+      "frozen"
+    ],
+    "conditions": 36,
+    "body_probes": 108,
+    "cue_pairings": 20,
+    "cue_ms": 200,
+    "gap_ms": 200,
+    "interblock_washout_ms": 5000,
+    "eligibility_trace_ms": 1000,
+    "reward_current_mv": 20,
+    "reward_total_ms_per_condition": 4000,
+    "training_duration_ms": 21000,
+    "extinction_exposures": 20,
+    "extinction_duration_ms": 8000,
+    "probe_horizon_s": 3,
+    "effort_target_radius_mm": 14,
+    "normal_target_radius_mm": 10,
+    "effort_size_multiplier": 1.4,
+    "transient_state": "Same white-conditioned dynamics restored before all probes; learned weights and memory_u/w retained. Thus no residual reward current is tested.",
+    "probe_plasticity": "Frozen to measure retained memory without probe-induced changes. Extinction exposure learns except in frozen arm.",
+    "comparison": "Paired versus matched unpaired and frozen conditions for trained-logo first approach, ever approach, and dwell. No-choice retained.",
+    "success_criteria": "Evidence of learned seeking requires paired training to increase trained-logo approach relative to BOTH unpaired and frozen controls; persistence requires that advantage after extinction; effort persistence requires that advantage at increased distance. Report matched differences without treating small deterministic scenario samples as biological population estimates.",
+    "addiction_claim": false,
+    "limitations": [
+      "Not a validated biological addiction model",
+      "Three independent scene seeds per logo; one reconstructed connectome",
+      "Retained rule memory decay is programmed at 1800 seconds",
+      "Increased distance is an effort proxy, not an aversive stimulus or punishment",
+      "Display-cue training to rendered-eye arena transfer is unvalidated",
+      "No concentration, subjective pleasure or drug-like dependence measurements"
+    ]
+  },
+  "limitations": [
+    "Not a validated biological addiction model",
+    "Three independent scene seeds per logo; one reconstructed connectome",
+    "Retained rule memory decay is programmed at 1800 seconds",
+    "Increased distance is an effort proxy, not an aversive stimulus or punishment",
+    "Display-cue training to rendered-eye arena transfer is unvalidated",
+    "No concentration, subjective pleasure or drug-like dependence measurements"
+  ],
+  "descriptive_gain_against_both_controls": {
+    "withdrawal": true,
+    "extinction": false,
+    "effort": false
+  },
+  "predeclared_first_approach_criterion_met": false,
+  "by_logo": {
+    "instagram": {
+      "paired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 1.4400000000000008
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.7400000000000003
+        }
+      },
+      "unpaired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 1.3200000000000007
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 1.1800000000000006
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.36000000000000004
+        }
+      },
+      "frozen": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.6800000000000003
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.6800000000000003
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      }
+    },
+    "google": {
+      "paired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 2,
+          "trained_ever": 2,
+          "target_dwell_total_s": 1.4000000000000006
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.21999999999999997
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      },
+      "unpaired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.46000000000000013
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.21999999999999997
+        }
+      },
+      "frozen": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 1.0200000000000005
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 1.0200000000000005
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 1,
+          "trained_ever": 1,
+          "target_dwell_total_s": 0.21999999999999997
+        }
+      }
+    },
+    "whatsapp": {
+      "paired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      },
+      "unpaired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      },
+      "frozen": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      }
+    },
+    "youtube": {
+      "paired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      },
+      "unpaired": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      },
+      "frozen": {
+        "withdrawal": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "extinction": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        },
+        "effort": {
+          "n": 3,
+          "trained_first": 0,
+          "trained_ever": 0,
+          "target_dwell_total_s": 0.0
+        }
+      }
+    }
+  },
+  "unrewarded_cue_readouts": {
+    "paired": {
+      "n": 12,
+      "pam11_spikes": 0,
+      "mean_motor_hz": 5.104166666666667
+    },
+    "unpaired": {
+      "n": 12,
+      "pam11_spikes": 0,
+      "mean_motor_hz": 7.291666666666667
+    },
+    "frozen": {
+      "n": 12,
+      "pam11_spikes": 0,
+      "mean_motor_hz": 7.291666666666667
+    }
+  },
+  "probe_duration_s": {
+    "minimum": 2.560000000001083,
+    "maximum": 3.0000000000020117,
+    "total": 321.6000000002122,
+    "stopped_before_horizon": 10,
+    "stop_reasons": {
+      "Three-second probe completed": 97,
+      "Fly left the 16 mm observation area": 11
+    }
+  },
+  "addiction_established": false,
+  "interpretation": "A descriptive approach advantage after training did not persist across both follow-up tests."
+}

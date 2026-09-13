@@ -1,0 +1,11 @@
+{
+  "conditions_verified": 36,
+  "body_probes_verified": 108,
+  "reward_doses_and_timing_verified": true,
+  "frozen_weights_verified": true,
+  "reward_absent_in_all_probes": true,
+  "position_outcomes_recomputed": true,
+  "effort_geometry_verified": true,
+  "matched_cue_inputs_and_layouts_verified": true,
+  "experiment_source_matches_predeclared_hash": true
+}
