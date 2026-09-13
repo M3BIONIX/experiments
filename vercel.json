@@ -2,7 +2,13 @@
   "services": {
     "frontend": {
       "root": ".",
-      "framework": "vite"
+      "framework": "vite",
+      "rewrites": [
+        {
+          "source": "/(fly-logo|fly-chess|fly-tic-tac-toe|sneak-bench)(/.*)?",
+          "destination": "/index.html"
+        }
+      ]
     },
     "backend": {
       "root": "backend",
@@ -16,14 +22,6 @@
       "destination": {
         "type": "service",
         "service": "backend"
-      }
-    },
-    {
-      "source": "/(fly-logo|fly-chess|fly-tic-tac-toe|sneak-bench)(/.*)?",
-      "destination": {
-        "type": "service",
-        "service": "frontend",
-        "path": "/"
       }
     },
     {
