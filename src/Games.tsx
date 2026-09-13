@@ -36,9 +36,13 @@ export function Games({game}:{game:Game}){
   const [retryPosition,setRetryPosition]=useState<string|null>(null);
   const request=useRef<AbortController|null>(null);
   const generation=useRef(0);
+  const statusInFlight=useRef(false);
   const checkStatus=async()=>{
-    try{const r=await fetch('/api/brain/status',{signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error();const data=await r.json();setStatus(data.status);}
+    if(statusInFlight.current)return;
+    statusInFlight.current=true;
+    try{const r=await fetch('/api/brain/status',{signal:AbortSignal.timeout(40000)});if(!r.ok)throw Error();const data=await r.json();setStatus(data.status);}
     catch{setStatus('unavailable');}
+    finally{statusInFlight.current=false;}
   };
   useEffect(()=>{void checkStatus();return()=>{generation.current++;request.current?.abort();};},[]);
   useEffect(()=>{if(status!=='loading')return;const id=setInterval(()=>void checkStatus(),3000);return()=>clearInterval(id);},[status]);
@@ -46,7 +50,7 @@ export function Games({game}:{game:Game}){
     const id=++generation.current;
     request.current?.abort();const controller=new AbortController();request.current=controller;
     setPhase('fly');setError('');setSpikeFrame(null);setRetryPosition(position);
-    const timeout=setTimeout(()=>controller.abort('timeout'),45000);
+    const timeout=setTimeout(()=>controller.abort('timeout'),75000);
     try{
       let response:Response;
       for(let attempt=0;;attempt++){

@@ -15,6 +15,7 @@ from game import validate_chess,validate_ttt
 state={'status':'loading','message':'Loading the fly neural simulation.'}
 brain=None
 lock=threading.Lock()
+initialized=threading.Event()
 
 def load():
     global brain
@@ -25,6 +26,8 @@ def load():
     except Exception:
         logging.exception('Neural initialization failed')
         state.update(status='unavailable',message='Neural data is unavailable. Run the backend preparation command and restart.')
+    finally:
+        initialized.set()
 
 @asynccontextmanager
 async def lifespan(app):
@@ -50,6 +53,8 @@ async def local_origin(request:Request,call_next):
 
 @app.get('/api/brain/status')
 def status():
+    if state['status']=='loading':
+        initialized.wait(30)
     return state
 
 @app.post('/api/brain/move')
@@ -58,6 +63,8 @@ def move(turn:Turn):
         validate_chess(turn.position) if turn.game=='chess' else validate_ttt(turn.position)
     except ValueError as e:
         raise HTTPException(422,str(e)) from e
+    if state['status']=='loading':
+        initialized.wait(30)
     if state['status']!='ready':
         raise HTTPException(503,state['message'])
     if not lock.acquire(blocking=False):
@@ -76,6 +83,8 @@ def move(turn:Turn):
 
 @app.get('/api/brain/geometry')
 def geometry():
+    if state['status']=='loading':
+        initialized.wait(30)
     if state['status']!='ready':
         raise HTTPException(503,state['message'])
     return brain.geometry
@@ -90,6 +99,8 @@ def play(turn:Turn):
         validate_chess(turn.position) if turn.game=='chess' else validate_ttt(turn.position)
     except ValueError as e:
         raise HTTPException(422,str(e)) from e
+    if state['status']=='loading':
+        initialized.wait(30)
     if state['status']!='ready':
         raise HTTPException(503,state['message'])
     if not lock.acquire(blocking=False):
