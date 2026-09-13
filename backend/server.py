@@ -1,7 +1,9 @@
-"""Local-only neural game API. A single bounded inference runs at a time."""
+"""Neural game API. A single bounded inference runs at a time."""
 import asyncio
 import json
 import logging
+import os
+import tempfile
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -38,9 +40,9 @@ class Turn(BaseModel):
 @app.middleware('http')
 async def local_origin(request:Request,call_next):
     origin=request.headers.get('origin')
-    if origin and origin not in {'http://localhost:5173','http://127.0.0.1:5173','http://localhost:4173','http://127.0.0.1:4173'}:
+    if origin and origin not in {'http://localhost:5173','http://127.0.0.1:5173','http://localhost:4173','http://127.0.0.1:4173','https://experiments.m3bionix.com'} | set(filter(None,os.environ.get('ALLOWED_ORIGINS','').split(','))):
         from fastapi.responses import JSONResponse
-        return JSONResponse({'detail':'Local preview origin required.'},status_code=403)
+        return JSONResponse({'detail':'This origin is not allowed.'},status_code=403)
     if request.method == 'POST' and int(request.headers.get('content-length','0')) > 2048:
         from fastapi.responses import JSONResponse
         return JSONResponse({'detail':'Request too large.'},status_code=413)
@@ -62,7 +64,7 @@ def move(turn:Turn):
         raise HTTPException(429,'The fly is responding to another move. Try again shortly.')
     try:
         result=brain.respond(turn.game,turn.position)
-        log=Path(__file__).parent/'runs'
+        log=Path(os.environ.get('FLY_RUNS_DIR',str(Path(tempfile.gettempdir())/'fly-runs')))
         log.mkdir(exist_ok=True)
         with (log/'moves.jsonl').open('a') as f:
             f.write(json.dumps({'game':turn.game,'position':turn.position,**result})+'\n')
@@ -104,7 +106,7 @@ def play(turn:Turn):
     def work():
         try:
             result=brain.respond(turn.game,turn.position,on_activity=activity)
-            log=Path(__file__).parent/'runs'
+            log=Path(os.environ.get('FLY_RUNS_DIR',str(Path(tempfile.gettempdir())/'fly-runs')))
             log.mkdir(exist_ok=True)
             with (log/'moves.jsonl').open('a') as f:
                 f.write(json.dumps({'game':turn.game,'position':turn.position,**result})+'\n')

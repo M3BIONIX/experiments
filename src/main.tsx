@@ -5,13 +5,12 @@ import { createRoot } from 'react-dom/client';
 import {BouncyAccordion} from './components/motion/bouncy-accordion';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import './style.css';
-const LogoReplay=React.lazy(()=>import('./LogoReplay').then(m=>({default:m.LogoReplay})));
 const Games = React.lazy(() => import('./Games').then(module => ({ default: module.Games })));
 import { useReveals } from './useReveals';
 import { ExperimentArticle, articles } from './ExperimentArticle';
 
 const experiments = [
-  {id:'fly-logo',title:'Fly Logo',description:'Could a fly get hooked on a logo? Explore the first tests, their results, and what remains unanswered.',href:'/reports/neural-logo/index.html'},
+  {id:'fly-logo',title:'Fly Logo',description:'We paired logos with a pretend reward. Did the computer fly keep coming back?',href:'#/experiments/fly-logo'},
   { id: 'sneak-bench', title: 'Sneak Bench', description: 'AI models play therapist, trying to identify the model on the other side of the conversation. Explore the conversations and results.', href: 'https://sneakbench.m3bionix.com/' },
   { id: 'fly-chess', title: 'Fly Chess', description: 'Play White against a fly-connectome simulation and watch its measured neural response.', href: '#/fly-chess' },
   { id: 'fly-tic-tac-toe', title: 'Fly Tic Tac Toe', description: 'Play X against the fly network on a nine-cell board.', href: '#/fly-tic-tac-toe' },
@@ -38,7 +37,7 @@ function App() {
   React.useEffect(() => { const update = () => { setHash(window.location.hash); if (!window.location.hash.startsWith('#/experiments/')) window.scrollTo(0, 0); }; window.addEventListener('hashchange', update); return () => window.removeEventListener('hashchange', update); }, []);
   const [, route, id, section] = hash.split('/');
   if (route === 'experiments' && articles[id]) return <ExperimentArticle key={id} id={id} section={section} />;
-  if (hash === '#/fly-logo') return <LoadBoundary><React.Suspense fallback={<p className="game-loading"><LoadingIndicator>Loading recordings…</LoadingIndicator></p>}><LogoReplay/></React.Suspense></LoadBoundary>;
+  if (hash === '#/fly-logo') return <ExperimentArticle id="fly-logo"/>;
   if (hash === '#/fly-chess') return <LoadBoundary><React.Suspense fallback={<div className="game-loading" role="status"><LoadingIndicator>Loading Fly Chess…</LoadingIndicator><div className="loading-board"/></div>}><Games key="chess" game="chess" /></React.Suspense></LoadBoundary>;
   if (hash === '#/fly-tic-tac-toe') return <LoadBoundary><React.Suspense fallback={<div className="game-loading" role="status"><LoadingIndicator>Loading Fly Tic Tac Toe…</LoadingIndicator><div className="loading-board"/></div>}><Games key="tic-tac-toe" game="tic-tac-toe" /></React.Suspense></LoadBoundary>;
   return <Index />;

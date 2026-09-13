@@ -84,3 +84,11 @@ Installed from the live `@beui` shadcn registry: `button-base`, `bouncy-accordio
 The homepage and expandable notes use beUI accordions. Game/replay actions use beUI buttons, trial selection uses Select, and both time inspectors use RangeSlider. Board inputs use the same button primitive with press/hover scaling disabled to preserve square positions. Measurement plots remain scientific figures rather than being replaced with decorative UI charts. The original PNG research figure is restored alongside the explicit measured-zero explanation.
 
 M3BIONIX links are underlined and point to `https://m3bionix.com/`. Header navigation and the external brand link are separate anchors.
+
+### Production neural backend
+
+The backend service uses `backend/Dockerfile.vercel`. Its build downloads the checksum-locked MaleCNS source, prepares the graph, and compiles the C++ kernel for Linux. It must not be deployed as an empty Python function: the model data is deliberately excluded from Git. Runtime uses one Uvicorn worker because the model is memory-heavy and each instance serializes inference.
+
+The production origin `https://experiments.m3bionix.com` is allowed. Additional exact origins can be supplied as a comma-separated `ALLOWED_ORIGINS` environment variable. Move logs go to the temporary directory by default; set `FLY_RUNS_DIR` for persistent storage. Logs in temporary storage are not a durable research record.
+
+After deployment, verify `/api/brain/status` reaches `ready`, then submit real chess and tic-tac-toe positions to `/api/brain/play`; a successful static-page build alone does not verify gameplay.

@@ -1,0 +1,20 @@
+FROM python:3.12-slim AS build
+RUN apt-get update && apt-get install -y --no-install-recommends g++ && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir uv
+WORKDIR /app
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev
+COPY vendor ./vendor
+COPY prepare.py brain.py game.py server.py ./
+ENV FLYWIREHEAD_DATA=/app/data
+# Fetch the checksum-locked source, prepare the graph, and compile for Linux.
+RUN uv run --no-sync python prepare.py && uv run --no-sync python -c "from brain import Brain; Brain()"
+# Raw import tables are not needed to serve requests.
+RUN rm -f data/edges.feather data/neurotransmitters.feather data/normalized/edges.arrow
+
+FROM python:3.12-slim
+RUN apt-get update && apt-get install -y --no-install-recommends libstdc++6 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY --from=build /app /app
+ENV PATH="/app/.venv/bin:$PATH" FLYWIREHEAD_DATA=/app/data PYTHONUNBUFFERED=1 PORT=80
+CMD ["sh", "-c", "exec uvicorn server:app --host 0.0.0.0 --port ${PORT:-80} --workers 1"]

@@ -121,7 +121,7 @@ export function Games({game}:{game:Game}){
         {promotion&&<div className="promotion" role="group" aria-label="Choose promotion"><span>Promote to</span>{['q','r','b','n'].map(p=><Button variant="outline" pressScale={0.98} key={p} onClick={()=>humanChess(promotion.from,promotion.to,p)}>{names[p]}</Button>)}<Button variant="outline" pressScale={0.98} onClick={()=>setPromotion(null)}>Cancel</Button></div>}
         <div className="game-actions"><Button variant="outline" pressScale={0.98} onClick={reset}>New game</Button><a href={`/pieces/NOTICE.txt`} target="_blank">{game==='chess'?'Piece credits':''}</a></div>
         {error&&<div className="game-error" role="alert"><p>{error}</p><Button variant="outline" pressScale={0.98} onClick={()=>retryPosition&&void askFly(retryPosition)}>Retry fly move</Button></div>}
-        {status==='unavailable'&&<div className="game-error"><p>Start the local neural backend to play.</p><Button variant="outline" pressScale={0.98} onClick={()=>void checkStatus()}>Check connection</Button></div>}
+        {status==='unavailable'&&<div className="game-error"><p>The brain service is unavailable. Please try connecting again shortly.</p><Button variant="outline" pressScale={0.98} onClick={()=>void checkStatus()}>Check connection</Button></div>}
       </section>
       <div className="brain-region"><LoadBoundary><Suspense fallback={<div className="brain-placeholder" role="status"><LoadingIndicator>Loading neuron view…</LoadingIndicator></div>}><BrainScene frame={spikeFrame} running={phase==='fly'&&!error} ready={status==='ready'} /></Suspense></LoadBoundary></div>
       <aside className="game-notes reveal">
