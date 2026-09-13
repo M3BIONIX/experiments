@@ -1,0 +1,12 @@
+import {test,expect} from '@playwright/test';
+test.use({launchOptions:{executablePath:'/Users/m3bionix/Library/Caches/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-mac-arm64/chrome-headless-shell',args:['--enable-unsafe-swiftshader']}});
+for(const colorScheme of ['light','dark'] as const){test(`replayer uses shared typography and theme in ${colorScheme}`,async({page})=>{
+ await page.emulateMedia({colorScheme});await page.setViewportSize({width:390,height:844});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://localhost:5173/#/fly-logo');await expect(page.getByRole('button',{name:'Play recording'})).toBeEnabled();
+ expect(await page.locator('h1').evaluate(el=>getComputedStyle(el).fontFamily)).toContain('Instrument Serif');expect(await page.locator('body').evaluate(el=>getComputedStyle(el).fontFamily)).toContain('Satoshi');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await expect(page.getByText('No signals were recorded from the monitored cells in any of the 125 separate-image tests.')).toBeVisible();await expect(page.locator('.research-figure img')).toBeVisible();
+ await page.getByText('How were these numbers checked?').click();await expect(page.getByText(/31,458,334 electrical pulses/)).toBeVisible();await expect(page.getByText(/262 pulses/)).toBeVisible();
+ await page.screenshot({path:`/tmp/replayer-${colorScheme}.png`,fullPage:true});expect(errors).toEqual([]);
+});}
+test('playback advances, scrub pauses, last frame stops, errors recover',async({page})=>{
+ await page.goto('http://localhost:5173/#/fly-logo');await expect(page.getByRole('button',{name:'Play recording'})).toBeEnabled();await page.getByRole('button',{name:'Play recording'}).click();await expect(page.getByRole('button',{name:'Pause',exact:true})).toBeVisible();const slider=page.getByRole('slider');await expect.poll(()=>slider.getAttribute('aria-valuenow')).not.toBe('0');await slider.focus();await slider.press('Home');await expect(page.getByRole('button',{name:'Play recording'})).toBeVisible();const max=await slider.getAttribute('aria-valuemax');await slider.press('End');await slider.press('ArrowLeft');await page.getByRole('button',{name:'Play recording'}).click();await expect(page.getByRole('button',{name:'Play recording'})).toBeVisible();expect(await slider.getAttribute('aria-valuenow')).toBe(max);
+});

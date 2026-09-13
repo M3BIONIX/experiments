@@ -1,0 +1,46 @@
+{
+  "choice_counts": {
+    "instagram": 12,
+    "google": 9,
+    "whatsapp": 10,
+    "youtube": 12,
+    "no_choice": 57
+  },
+  "assays": [
+    {
+      "logo": "instagram",
+      "exposures": 25,
+      "pam11_spikes": 0,
+      "mean_hz": 0.0
+    },
+    {
+      "logo": "google",
+      "exposures": 25,
+      "pam11_spikes": 0,
+      "mean_hz": 0.0
+    },
+    {
+      "logo": "whatsapp",
+      "exposures": 25,
+      "pam11_spikes": 0,
+      "mean_hz": 0.0
+    },
+    {
+      "logo": "youtube",
+      "exposures": 25,
+      "pam11_spikes": 0,
+      "mean_hz": 0.0
+    },
+    {
+      "logo": "blank",
+      "exposures": 25,
+      "pam11_spikes": 0,
+      "mean_hz": 0.0
+    }
+  ],
+  "network_spikes": 31458334,
+  "positive_control": {
+    "pam11_spikes": 262,
+    "pam11_hz": 87.33333333333333
+  }
+}

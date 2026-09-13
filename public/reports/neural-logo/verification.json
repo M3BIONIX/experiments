@@ -1,0 +1,8 @@
+{
+  "trials": 100,
+  "all_positions_recounted": true,
+  "all_neural_intervals_match_body_time": true,
+  "all_logo_assays_reward_off": true,
+  "isolated_assays": 125,
+  "sum_network_spikes": 369323006
+}
