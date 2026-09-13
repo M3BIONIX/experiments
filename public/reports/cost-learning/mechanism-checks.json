@@ -1,0 +1,139 @@
+{
+  "control": {
+    "sim_ms": 1700.0,
+    "interval_ms": 200,
+    "compute_seconds": 0.7631996670024819,
+    "total_spikes": 252777,
+    "pam11_spikes": 0,
+    "ppl101_spikes": 30,
+    "pam11_hz": 0.0,
+    "ppl101_hz": 75.0,
+    "kc_hz": 2.301919291338583,
+    "motor_hz": 5.0,
+    "turn_hz": -35.0,
+    "reward_dose_ms": 0.0,
+    "cost_dose_ms": 0.0,
+    "reward_current_mean_mv": 0.0,
+    "cost_current_mean_mv": 0.0,
+    "pending_reward_dose_ms": 0,
+    "pending_cost_dose_ms": 0,
+    "input_sha256": "4e88a87e94fc98cc4a496e4bd49ea67c47141d87b9812af8541c09f4f35e5e0e",
+    "spike_sha256": "267043479e8739ae41dff94c288785ed7fa93af25cb8edbfca021e6dff2d2929"
+  },
+  "reward": {
+    "sim_ms": 1700.0,
+    "interval_ms": 200,
+    "compute_seconds": 0.7681507500019507,
+    "total_spikes": 253161,
+    "pam11_spikes": 261,
+    "ppl101_spikes": 34,
+    "pam11_hz": 87.0,
+    "ppl101_hz": 85.0,
+    "kc_hz": 2.2428641732283467,
+    "motor_hz": 5.0,
+    "turn_hz": -30.0,
+    "reward_dose_ms": 200.0,
+    "cost_dose_ms": 0.0,
+    "reward_current_mean_mv": 20.0,
+    "cost_current_mean_mv": 0.0,
+    "pending_reward_dose_ms": 0,
+    "pending_cost_dose_ms": 0,
+    "input_sha256": "4e88a87e94fc98cc4a496e4bd49ea67c47141d87b9812af8541c09f4f35e5e0e",
+    "spike_sha256": "1779eef0b315405c312a5f7a2c3681b33063aceaf2098a55a977c7ce2d6233f4"
+  },
+  "cost": {
+    "sim_ms": 1700.0,
+    "interval_ms": 200,
+    "compute_seconds": 0.7741905829971074,
+    "total_spikes": 253928,
+    "pam11_spikes": 0,
+    "ppl101_spikes": 52,
+    "pam11_hz": 0.0,
+    "ppl101_hz": 130.0,
+    "kc_hz": 2.3560531496062995,
+    "motor_hz": 5.0,
+    "turn_hz": -30.0,
+    "reward_dose_ms": 0.0,
+    "cost_dose_ms": 200.0,
+    "reward_current_mean_mv": 0.0,
+    "cost_current_mean_mv": 20.0,
+    "pending_reward_dose_ms": 0,
+    "pending_cost_dose_ms": 0,
+    "input_sha256": "4e88a87e94fc98cc4a496e4bd49ea67c47141d87b9812af8541c09f4f35e5e0e",
+    "spike_sha256": "809523c198b497cf906655c9a024ff202019b937a6986110120a8904dc88a7f7"
+  },
+  "cost_with_frozen_weights": {
+    "sim_ms": 1700.0,
+    "interval_ms": 200,
+    "compute_seconds": 0.7669937079990632,
+    "total_spikes": 253116,
+    "pam11_spikes": 0,
+    "ppl101_spikes": 50,
+    "pam11_hz": 0.0,
+    "ppl101_hz": 125.0,
+    "kc_hz": 2.298228346456693,
+    "motor_hz": 3.75,
+    "turn_hz": -40.0,
+    "reward_dose_ms": 0.0,
+    "cost_dose_ms": 200.0,
+    "reward_current_mean_mv": 0.0,
+    "cost_current_mean_mv": 20.0,
+    "pending_reward_dose_ms": 0,
+    "pending_cost_dose_ms": 0,
+    "input_sha256": "4e88a87e94fc98cc4a496e4bd49ea67c47141d87b9812af8541c09f4f35e5e0e",
+    "spike_sha256": "3ec784f35e53bbf28505156a9af9a0cd8a5e8a0210a60e94067ca4b63f3b927c"
+  },
+  "cost_changes_weights_relative_to_unstimulated": true,
+  "frozen_preserves_weights": true,
+  "cost_accounting_and_single_consumption": true,
+  "geometry_and_actual_movement_feedback": [
+    {
+      "slot": 0,
+      "order": [
+        "instagram",
+        "google",
+        "whatsapp",
+        "youtube"
+      ],
+      "food_contacts": 1,
+      "walking_cost": 0.138166145203442,
+      "cost_dose_ms_delivered": 27.428838003745266
+    },
+    {
+      "slot": 1,
+      "order": [
+        "youtube",
+        "instagram",
+        "google",
+        "whatsapp"
+      ],
+      "food_contacts": 1,
+      "walking_cost": 0.1381661452033451,
+      "cost_dose_ms_delivered": 27.428838003725765
+    },
+    {
+      "slot": 2,
+      "order": [
+        "whatsapp",
+        "youtube",
+        "instagram",
+        "google"
+      ],
+      "food_contacts": 1,
+      "walking_cost": 0.13816614520348366,
+      "cost_dose_ms_delivered": 27.428838003753828
+    },
+    {
+      "slot": 3,
+      "order": [
+        "google",
+        "whatsapp",
+        "youtube",
+        "instagram"
+      ],
+      "food_contacts": 1,
+      "walking_cost": 0.13816614520341838,
+      "cost_dose_ms_delivered": 27.428838003740598
+    }
+  ]
+}

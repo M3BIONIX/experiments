@@ -1,0 +1,14 @@
+{
+  "conditions": 48,
+  "probes": 192,
+  "physical_loss_recomputed": true,
+  "all_cost_doses_accounted_for": true,
+  "all_food_doses_accounted_for": true,
+  "no_reward_current_in_behavioral_probes": true,
+  "motor_commands_recomputed_from_neural_rates": true,
+  "matched_positive_dose_paired_unpaired": true,
+  "all_four_target_positions_verified": true,
+  "cue_and_blank_images_differ": true,
+  "frozen_training_weights_and_runtime_branch_assertions_verified": true,
+  "source_matches_predeclared_protocol": true
+}

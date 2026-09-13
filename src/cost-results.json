@@ -1,0 +1,219 @@
+{
+  "conditions": 48,
+  "behavioral_probes": 192,
+  "arms": {
+    "paired": {
+      "n": 16,
+      "central_acquisition_food_contacts": 3,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        3393,
+        3489
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.420000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 0.0,
+          "distance_mm": 231.81969831773984,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7294,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.36000000002915
+        },
+        "after_extinction": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.600000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 236.60188599066075,
+          "pam11_spikes": 2,
+          "ppl101_spikes": 7260,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.00000000002839
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.3400000000000016,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 91.39418176850243,
+          "distance_mm": 228.48545442125612,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 9007,
+          "delivered_cost_dose_ms": 18278.83635370049,
+          "seconds": 47.00000000002839
+        },
+        "punishment": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "dwell_s": 2.140000000000001,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 2,
+          "no_approach": 5,
+          "loss": 25.400701333355798,
+          "distance_mm": 214.007013333558,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7957,
+          "delivered_cost_dose_ms": 5080.140266671161,
+          "seconds": 47.16000000002873
+        }
+      },
+      "east_first_approaches": 55,
+      "all_probe_count": 64
+    },
+    "unpaired": {
+      "n": 16,
+      "central_acquisition_food_contacts": 3,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        3358,
+        3474
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.660000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 0.0,
+          "distance_mm": 230.3396941525735,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7128,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 46.88000000002814
+        },
+        "after_extinction": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.100000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 236.14068517143403,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7379,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.26000000002894
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.660000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 94.33879210173195,
+          "distance_mm": 235.84698025432985,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 9093,
+          "delivered_cost_dose_ms": 18867.75842034639,
+          "seconds": 47.18000000002877
+        },
+        "punishment": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.020000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 4,
+          "no_approach": 1,
+          "loss": 29.85590912138729,
+          "distance_mm": 218.55909121387288,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 8173,
+          "delivered_cost_dose_ms": 5971.181824277458,
+          "seconds": 47.60000000002966
+        }
+      },
+      "east_first_approaches": 61,
+      "all_probe_count": 64
+    },
+    "frozen": {
+      "n": 16,
+      "central_acquisition_food_contacts": 4,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        0,
+        0
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 7404,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 48.000000000030504
+        },
+        "after_extinction": {
+          "trained_first": 3,
+          "trained_ever": 3,
+          "dwell_s": 3.2000000000000015,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 5,
+          "loss": 0.0,
+          "distance_mm": 166.24265442794257,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 8609,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.72000000002991
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 89.28145445549964,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 9192,
+          "delivered_cost_dose_ms": 17856.290891099932,
+          "seconds": 48.000000000030504
+        },
+        "punishment": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 4,
+          "no_approach": 0,
+          "loss": 30.32036361387491,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 8002,
+          "delivered_cost_dose_ms": 6064.072722774983,
+          "seconds": 48.000000000030504
+        }
+      },
+      "east_first_approaches": 59,
+      "all_probe_count": 64
+    }
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "conditions": 48,
+  "behavioral_probes": 192,
+  "arms": {
+    "paired": {
+      "n": 16,
+      "central_acquisition_food_contacts": 3,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        3393,
+        3489
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.420000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 0.0,
+          "distance_mm": 231.81969831773984,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7294,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.36000000002915
+        },
+        "after_extinction": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.600000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 236.60188599066075,
+          "pam11_spikes": 2,
+          "ppl101_spikes": 7260,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.00000000002839
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.3400000000000016,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 91.39418176850243,
+          "distance_mm": 228.48545442125612,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 9007,
+          "delivered_cost_dose_ms": 18278.83635370049,
+          "seconds": 47.00000000002839
+        },
+        "punishment": {
+          "trained_first": 2,
+          "trained_ever": 2,
+          "dwell_s": 2.140000000000001,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 2,
+          "no_approach": 5,
+          "loss": 25.400701333355798,
+          "distance_mm": 214.007013333558,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7957,
+          "delivered_cost_dose_ms": 5080.140266671161,
+          "seconds": 47.16000000002873
+        }
+      },
+      "east_first_approaches": 55,
+      "all_probe_count": 64
+    },
+    "unpaired": {
+      "n": 16,
+      "central_acquisition_food_contacts": 3,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        3358,
+        3474
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.660000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 2,
+          "loss": 0.0,
+          "distance_mm": 230.3396941525735,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7128,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 46.88000000002814
+        },
+        "after_extinction": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.100000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 236.14068517143403,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 7379,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.26000000002894
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 3.660000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 94.33879210173195,
+          "distance_mm": 235.84698025432985,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 9093,
+          "delivered_cost_dose_ms": 18867.75842034639,
+          "seconds": 47.18000000002877
+        },
+        "punishment": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.020000000000002,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 4,
+          "no_approach": 1,
+          "loss": 29.85590912138729,
+          "distance_mm": 218.55909121387288,
+          "pam11_spikes": 1,
+          "ppl101_spikes": 8173,
+          "delivered_cost_dose_ms": 5971.181824277458,
+          "seconds": 47.60000000002966
+        }
+      },
+      "east_first_approaches": 61,
+      "all_probe_count": 64
+    },
+    "frozen": {
+      "n": 16,
+      "central_acquisition_food_contacts": 4,
+      "guided_food_contacts": 48,
+      "changed_edges_range": [
+        0,
+        0
+      ],
+      "native_cue_pam11_spikes": 0,
+      "blank_panel_pam11_spikes": 0,
+      "stages": {
+        "withdrawal": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 0.0,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 7404,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 48.000000000030504
+        },
+        "after_extinction": {
+          "trained_first": 3,
+          "trained_ever": 3,
+          "dwell_s": 3.2000000000000015,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 5,
+          "loss": 0.0,
+          "distance_mm": 166.24265442794257,
+          "pam11_spikes": 0,
+          "ppl101_spikes": 8609,
+          "delivered_cost_dose_ms": 0.0,
+          "seconds": 47.72000000002991
+        },
+        "high_cost": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 0,
+          "no_approach": 0,
+          "loss": 89.28145445549964,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 9192,
+          "delivered_cost_dose_ms": 17856.290891099932,
+          "seconds": 48.000000000030504
+        },
+        "punishment": {
+          "trained_first": 4,
+          "trained_ever": 4,
+          "dwell_s": 4.860000000000003,
+          "returns_after_delivered_penalty": 0,
+          "penalty_experienced": 4,
+          "no_approach": 0,
+          "loss": 30.32036361387491,
+          "distance_mm": 223.20363613874912,
+          "pam11_spikes": 4,
+          "ppl101_spikes": 8002,
+          "delivered_cost_dose_ms": 6064.072722774983,
+          "seconds": 48.000000000030504
+        }
+      },
+      "east_first_approaches": 59,
+      "all_probe_count": 64
+    }
+  },
+  "by_logo": {
+    "instagram": {
+      "paired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "unpaired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "frozen": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      }
+    },
+    "google": {
+      "paired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 0
+      },
+      "unpaired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "frozen": {
+        "withdrawal": 1,
+        "after_extinction": 0,
+        "high_cost": 1,
+        "punishment": 1
+      }
+    },
+    "whatsapp": {
+      "paired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 0
+      },
+      "unpaired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "frozen": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      }
+    },
+    "youtube": {
+      "paired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "unpaired": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      },
+      "frozen": {
+        "withdrawal": 1,
+        "after_extinction": 1,
+        "high_cost": 1,
+        "punishment": 1
+      }
+    }
+  },
+  "protocol": {
+    "status": "predeclared",
+    "source_hashes": {
+      "app/cost_trials.py": "497f0b168766a2185afeb0c289fbf95c72e350af830bc5309802afe7293d06b5",
+      "app/cost_learning.py": "95a24b8d2ad4927e64675ab5aafb1f363cfb355158c81e8265c2f113b30f200b",
+      "app/engine.py": "7aff92f3945af2d887e60c5a9864bd29d5ac139a544cd4ed782f404da62f360b"
+    },
+    "repo_commit": "fcefe9441f80e25aab713411ebced53f5e5ea172",
+    "logos": [
+      "instagram",
+      "google",
+      "whatsapp",
+      "youtube"
+    ],
+    "slots": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "arms": [
+      "paired",
+      "unpaired",
+      "frozen"
+    ],
+    "conditions": 48,
+    "behavioral_probes": 192,
+    "loss": "walking_cost_per_mm * actual thorax path length + penalty_on_target_entry - consumed_virtual_food_units",
+    "learning": "Positive environmental outcomes drive PAM11; costs drive PPL101. Existing connectome plasticity updates weights. No backpropagation, critic, logo-specific motor policy or addiction objective added.",
+    "feedback_mapping": "1 arbitrary outcome unit = 200 ms-equivalent current at 20 mV; queues are consumed at up to 20 mV and drained at each episode end. Movement outcomes affect the next neural interval.",
+    "training": "Three 0.6-second near-food starts, explicitly not choice tests; one 3-second central food-available acquisition episode. One consumable food unit per episode. All have 0.1 units/mm movement cost. Same rendered eye pipeline throughout.",
+    "unpaired_control": "PAM11 food feedback withheld during arena training; positive dose matched to paired arm and delivered on white frames after a five-second separation. PPL101 still receives actual movement costs. Frozen arm receives own contingent outcomes with learning disabled.",
+    "probe_branching": "Same white-conditioned transient state with trained synaptic memory restored before each branch. Paired/unpaired plasticity remains active; frozen control remains frozen. No reward input in any probe.",
+    "probes": {
+      "withdrawal": "3 seconds, no food, no cost input",
+      "after_extinction": "2-second unrewarded rendered cue exposure then 3-second no-food/no-cost walking probe",
+      "high_cost": "3 seconds, no food, 0.4 units/mm loss drives PPL101",
+      "punishment": "3 seconds, no food, 0.1 units/mm plus 2-unit PPL101-driving penalty on target-zone entry"
+    },
+    "geometry": "All four logos in every arena, trained logo counterbalanced across all four slots; central heading held at zero; one reconstructed connectome.",
+    "approach_zone_mm": 3,
+    "food_or_penalty_zone_mm": 2,
+    "rearm_distance_mm": 4,
+    "criteria": "Compare trained-logo first approaches, dwell and food-zone entries against BOTH unpaired and frozen controls. A return after penalty requires leaving >=4 mm and entering <2 mm again after a delivered penalty. Require acquisition evidence before interpreting persistent seeking. Report inconclusive when exposure or acquisition fails; do not relabel altered paths as addiction.",
+    "limitations": [
+      "Virtual food and arbitrary cost units, not metabolism or calibrated nociception",
+      "Experimental PPL101 cost-to-plasticity mapping; increased spiking is not validated aversion",
+      "No claim that existing plasticity minimizes the defined loss",
+      "Short pilot horizons and four deterministic scenes per logo; not biological addiction validation",
+      "Guided food contact is training exposure, never voluntary seeking",
+      "No spontaneous dopamine current is invented for logo recognition"
+    ]
+  },
+  "addiction_established": false,
+  "approach_advantage_against_both_controls": {
+    "withdrawal": false,
+    "after_extinction": false,
+    "high_cost": false,
+    "punishment": false
+  },
+  "paired_returns_after_delivered_penalty": 0,
+  "starting_direction": {
+    "east_first": 175,
+    "any_first_approach": 175,
+    "all_first_approaches_east": true
+  },
+  "interpretation": "Paired training did not produce a consistent trained-logo first-approach advantage over both controls across all tests. 2 paired probes received target penalties, with 0 returns after a fully delivered penalty. Every recorded first approach was toward the initially faced east position. Addiction is not established."
+}

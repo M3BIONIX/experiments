@@ -1,0 +1,5 @@
+{
+  "reason": "NumPy scalar conversion failed before training any condition; geom.matid now read with .item().",
+  "completed_conditions_before_fix": 0,
+  "experimental_parameters_changed": false
+}

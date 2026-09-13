@@ -109,9 +109,9 @@ export function Games({game}:{game:Game}){
   const legal=selected?board.current.moves({square:selected,verbose:true}).map(m=>m.to):[];
   const message=result||(error?'The fly could not respond.':status!=='ready'?(status==='loading'?'Loading the fly neural simulation…':'The neural simulator is offline.'):phase==='fly'?`The fly is responding${elapsed>=3?` · ${elapsed}s`: '…'}`:game==='chess'?(board.current.isCheck()?'You’re in check.':'Your turn. You play White.'):'Your turn. You play X.');
   return <div className="game-page">
-    <a className="back-link" href={`#/experiments/${game === 'chess' ? 'fly-chess' : 'fly-tic-tac-toe'}`}><ArrowLeftIcon aria-hidden="true"/> About this experiment</a>
+    <a className="back-link" href={`/${game === 'chess' ? 'fly-chess' : 'fly-tic-tac-toe'}`}><ArrowLeftIcon aria-hidden="true"/> About this experiment</a>
     <header className="game-intro"><div className="game-title reveal"><h1>{game==='chess'?'Fly Chess':'Fly Tic Tac Toe'}</h1><p>{game==='chess'?'You play White. Select a piece, then a square.':'You play X. Choose an empty square.'}</p></div></header>
-    {game==='chess'&&<p className="game-limitation">The move adapter now changes its assignments with the position. It has no chess strategy. <a href="#/experiments/fly-chess/evaluation">Behavioral evaluation</a></p>}
+    {game==='chess'&&<p className="game-limitation">The move adapter now changes its assignments with the position. It has no chess strategy. <a href="/fly-chess/evaluation">Behavioral evaluation</a></p>}
     <main className="play-layout">
       <section className="board-section reveal" aria-label="Game board">
         <div className="player-bar"><span className="player-token black-token"/><div><strong>Fly brain</strong><span>Simulated opponent</span></div><span className="turn-label">{phase==='fly'&&!error?'Responding':game==='chess'?'Black':'O'}</span></div>
