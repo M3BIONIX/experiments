@@ -63,5 +63,5 @@ class Brain:
             activity_bins=activity_bins,
             input_sha256=hashlib.sha256(image.tobytes()).hexdigest(),
             spike_sha256=hashlib.sha256(counts.tobytes()).hexdigest(),
-            readout='Fixed descending-neuron pools; destination + 0.25 origin for chess; cell pool for tic tac toe. Ties use UCI/cell order.',
+            readout='Position-keyed balanced assignment of legal moves to measured descending-neuron pools. No piece values or square bonuses. Reproducible position-keyed tie order.',
             learning=False))

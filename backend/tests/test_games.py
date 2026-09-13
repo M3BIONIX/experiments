@@ -28,13 +28,16 @@ def test_ttt_exhaustive_legal_games():
     assert len(seen)==5478
 
 def test_readout_is_causal_and_masks_occupied_cells():
-    rates=np.zeros(64);rates[0]=999;rates[4]=3
-    assert choose_move('tic-tac-toe','X........',rates)[0]=='4'
-    rates[8]=4
-    assert choose_move('tic-tac-toe','X........',rates)[0]=='8'
+    results=[]
+    for pool in range(64):
+        rates=np.zeros(64);rates[pool]=1
+        move,_,_=choose_move('tic-tac-toe','X........',rates)
+        assert int(move) in range(1,9)
+        assert choose_move('tic-tac-toe','X........',rates)[0]==move
+        results.append(move)
+    assert len(set(results))==8
     with pytest.raises(ValueError):choose_move('tic-tac-toe','X........',np.zeros(64))
-    only_occupied=np.zeros(64);only_occupied[0]=99
-    assert choose_move('tic-tac-toe','X........',only_occupied)==('1',0.0,8)
+
 
 def test_chess_outputs_legal_moves():
     board=chess.Board();board.push_uci('e2e4')
@@ -47,12 +50,20 @@ def test_visual_input_changes_with_board():
     assert render_board('tic-tac-toe','X........').shape==(128,128,3)
 
 
-def test_sparse_chess_output_returns_explicit_zero_tie():
-    board=chess.Board();board.push_uci('e2e4')
-    rates=np.zeros(64);rates[chess.A1]=1
-    move,score,ties=choose_move('chess',board.fen(),rates)
-    assert move==sorted(m.uci() for m in board.legal_moves)[0]
-    assert score==0 and ties==board.legal_moves.count()
+def test_position_assignment_breaks_constant_output_cycles():
+    # Deliberately constant output must not permanently favor a rook or square.
+    b=chess.Board('r3k2r/pppppppp/8/8/8/8/PPPPPPPP/R3K2R b KQkq - 0 1')
+    rates=np.arange(1,65,dtype=float)
+    pieces=set();moves=set()
+    for number in range(1,101):
+        b.fullmove_number=number
+        uci,_,_=choose_move('chess',b.fen(),rates)
+        move=chess.Move.from_uci(uci)
+        assert move in b.legal_moves
+        pieces.add(b.piece_at(move.from_square).piece_type);moves.add(uci)
+    assert len(pieces)>=3
+    assert len(moves)>10
+
 
 @pytest.mark.parametrize('seed',range(20))
 def test_long_chess_games_with_sparse_outputs(seed):

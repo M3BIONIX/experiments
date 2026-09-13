@@ -1,4 +1,5 @@
 """Game rules and explicit board-to-image / neural-to-action adapters."""
+import hashlib
 import chess
 import numpy as np
 from PIL import Image, ImageDraw
@@ -54,20 +55,24 @@ def render_board(game, position):
     return np.asarray(im).copy()
 
 def choose_move(game, position, rates):
-    """Fixed 64 output pools: destination response + 1/4 origin response for chess.
+    """Assign legal actions to measured pools with a reproducible position-keyed shuffle.
 
-    This is an untrained readout, not chess strategy. Equal scores break in UCI/cell order.
+    No piece values or origin/destination bonuses. This engineered adapter removes
+    permanently favored squares; it does not teach chess or optimize good moves.
+    Full FEN includes the move counter so revisiting a board need not repeat a cycle.
     """
     if len(rates) != 64 or not np.isfinite(rates).all() or max(rates) <= 0:
         raise ValueError('No measured output activity. No substitute move was generated.')
     if game == 'chess':
-        board,moves = validate_chess(position)
-        scored = [(m.uci(),float(rates[m.to_square] + .25*rates[m.from_square])) for m in moves]
+        _, legal = validate_chess(position)
+        moves = [m.uci() for m in legal]
     else:
-        cells = validate_ttt(position)
-        scored = [(str(i),float(rates[i])) for i in cells]
+        moves = [str(i) for i in validate_ttt(position)]
+    def key(value):
+        return hashlib.sha256(f'readout-v2:{game}:{position}:{value}'.encode()).digest()
+    moves.sort(key=lambda move:key('move:'+move))
+    pools = sorted(range(64),key=lambda pool:key('pool:'+str(pool)))
+    scored = [(move,float(rates[pools[i % 64]])) for i,move in enumerate(moves)]
     best = max(score for _,score in scored)
-    # Silence in the legal pools is a measured tie, not an API failure.
-    # Preserve the declared fixed ordering; never invent spikes or a strategy.
     tied = [move for move,score in scored if score == best]
     return tied[0], best, len(tied)

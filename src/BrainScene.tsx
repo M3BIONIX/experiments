@@ -9,7 +9,7 @@ export type SpikeFrame={type:'activity';end_ms:number;indices:number[];counts:nu
 type Geometry={positions:number[];indices:number[];count:number;total:number};
 let geometryRequest:Promise<Geometry>|null=null;
 function loadGeometry(){
-  geometryRequest??=fetch('/api/brain/geometry',{signal:AbortSignal.timeout(15000)}).then(async response=>{
+  geometryRequest??=fetch('/api/brain/geometry',{signal:AbortSignal.timeout(45000)}).then(async response=>{
     if(!response.ok)throw Error('Could not load neuron coordinates.');return response.json() as Promise<Geometry>;
   }).catch(error=>{geometryRequest=null;throw error;});
   return geometryRequest;
@@ -62,7 +62,7 @@ export function BrainScene({frame,running,ready}:{frame:SpikeFrame|null;running:
     const controls=new OrbitControls(camera,renderer.domElement);controls.enableZoom=false;controls.enablePan=false;controls.enableDamping=false;
     renderer.domElement.style.touchAction='pan-y';
     const render=()=>renderer.render(scene,camera);controls.addEventListener('change',render);
-    const resize=new ResizeObserver(()=>{const width=container.clientWidth,height=container.clientHeight;renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();render();});resize.observe(container);
+    const resize=new ResizeObserver(()=>{const width=container.clientWidth,height=container.clientHeight;if(!width||!height)return;renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();const fov=THREE.MathUtils.degToRad(camera.fov);const distance=buffer.boundingSphere!.radius/Math.sin(Math.min(fov,2*Math.atan(Math.tan(fov/2)*camera.aspect))/2)*1.08;camera.position.setLength(distance);controls.update();render();});resize.observe(container);
     const recolor=()=>{material.uniforms.dark.value=theme.matches?1:0;render();};theme.addEventListener('change',recolor);
     apply.current=(value)=>{activation.fill(0);if(value)for(let i=0;i<value.indices.length;i++){const index=value.indices[i];if(index<activation.length)activation[index]=value.counts[i];}buffer.attributes.activation.needsUpdate=true;render();};
     apply.current(latest.current);
@@ -72,7 +72,8 @@ export function BrainScene({frame,running,ready}:{frame:SpikeFrame|null;running:
   },[geometry,attempt]);
   useEffect(()=>{apply.current?.(frame);},[frame]);
   return <section className="brain-scene" aria-labelledby="brain-scene-title">
-    <div className="brain-scene-heading"><h2 id="brain-scene-title">The fly’s neural response</h2><span>{running?'Receiving spikes':frame?'Last measured interval':'Waiting for your move'}</span></div>
+    <div className="brain-scene-heading"><h2 id="brain-scene-title">The fly’s nervous system</h2><span>{running?'Receiving spikes':frame?'Last measured interval':'Waiting for your move'}</span></div>
+    <p className="brain-anatomy">Brain above, nerve cord below. Dots are recorded cell-body positions; the space between them is not a missing image. Orange dots fired during the displayed interval.</p>
     <div className="brain-canvas" ref={host}>{!geometry&&!error&&<p>{ready?<LoadingIndicator>Loading neuron positions…</LoadingIndicator>:'Waiting for the neural simulator…'}</p>}</div>
     {error&&<div className="brain-error" role="alert">{error}<Button variant="outline" pressScale={0.98} onClick={()=>setAttempt(v=>v+1)}>Reload 3D view</Button></div>}
     <Disclosure className="brain-options" title={<>Rotate, zoom & model details</>}>
