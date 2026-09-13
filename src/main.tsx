@@ -10,7 +10,7 @@ import { useReveals } from './useReveals';
 import { ExperimentArticle, articles } from './ExperimentArticle';
 
 const experiments = [
-  {id:'fly-logo',title:'Fly Logo',description:'We paired logos with a pretend reward. Did the computer fly keep coming back?',href:'#/experiments/fly-logo'},
+  {id:'fly-logo',title:'Fly Logo',description:'Can seeing an app logo trigger a reward response and make a simulated fly choose it more often?',href:'#/experiments/fly-logo'},
   { id: 'sneak-bench', title: 'Sneak Bench', description: 'AI models play therapist, trying to identify the model on the other side of the conversation. Explore the conversations and results.', href: 'https://sneakbench.m3bionix.com/' },
   { id: 'fly-chess', title: 'Fly Chess', description: 'Play White against a fly-connectome simulation and watch its measured neural response.', href: '#/fly-chess' },
   { id: 'fly-tic-tac-toe', title: 'Fly Tic Tac Toe', description: 'Play X against the fly network on a nine-cell board.', href: '#/fly-tic-tac-toe' },
